@@ -6,7 +6,7 @@ const Header: FC = () => {
     <header className={classes.header}>
       <div className='container'>
         <h2>&copy;
-          <a href="https://github.com/Antupod"> My GitHub</a>
+          <a href="https://github.com/Antupod"> Antupod</a>
         </h2>
       </div>
     </header>

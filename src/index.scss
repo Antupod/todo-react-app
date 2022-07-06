@@ -23,9 +23,23 @@ ul, li {
   list-style-type: none;
 }
 
+section {
+  padding: 2rem 0;
+}
+
 .container {
   max-width: 120rem;
   width: 100%;
   margin: 0 auto;
   padding: 0 1.5rem;
+}
+
+.green {
+  background-color: #62bb77;
+  border: 1px solid #62bb77;
+}
+
+.red {
+  background-color: #ee5e6b;
+  border: 1px solid #ee5e6b;
 }

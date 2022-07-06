@@ -1,11 +1,21 @@
-import React from 'react';
+import {FC, ChangeEvent} from 'react'
+import classes from './Input.module.scss'
 
-const Input = () => {
+interface InputProps {
+  placeholder: string,
+  type?: string,
+  value?: string,
+  additionalClass?: string,
+  onChangeHandler?: (e: ChangeEvent<HTMLInputElement>) => void,
+}
+
+const Input: FC<InputProps> = (props) => {
+  const classNames: string[] = [classes.input, props.additionalClass ?? '']
+
   return (
-    <div>
+    <input value={props.value} className={classNames.join('')} type={props.type} placeholder={props.placeholder}
+           onChange={props.onChangeHandler}/>
+  )
+}
 
-    </div>
-  );
-};
-
-export default Input;
+export default Input

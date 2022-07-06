@@ -1,26 +1,14 @@
 .btn {
   display: inline-block;
-
-  font-weight: 400;
-
   color: white;
   text-align: center;
   white-space: nowrap;
-  vertical-align: middle;
-
-  background-color: #17a2b8;
-  border: 1px solid #17a2b8;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
-
-  transition: color .15s ease-in-out,
-              background-color .15s ease-in-out,
-              border-color .15s ease-in-out,
-              box-shadow .15s ease-in-out;
+  transition: 0.15ms;
 
   &:hover {
-    color: white;
-    background-color: #0069d9;
-    border-color: #0062cc;
+    background-color: #e595e4;
+    border-color: #e595e4;
   }
 }
