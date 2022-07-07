@@ -1,0 +1,21 @@
+@import 'variables';
+
+@mixin btnColor($color) {
+  background-color: $color;
+  border: 1px solid $color;
+}
+
+@mixin formElement($padding, $width) {
+  font-size: 1.8rem;
+  display: block;
+  color: #9f4a4a;
+  background-color: $white;
+  border: 1px solid $border-gray;
+  transition: .15s ease-out;
+  width: $width;
+  padding: $padding;
+
+  &:focus {
+    outline-color: $focus-blue;
+  }
+}

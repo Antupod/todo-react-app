@@ -1,0 +1,13 @@
+@import '../vendor/variables';
+@import '../vendor/mixins';
+
+.header {
+  background: linear-gradient(45deg, $orange, $pink);
+  padding: 2rem 0;
+  color: $white;
+}
+
+
+.logo {
+  font-size: 3rem;
+}

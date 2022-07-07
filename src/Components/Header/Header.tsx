@@ -1,16 +1,13 @@
-import {FC} from 'react';
-import classes from './Header.module.scss'
+import {FC} from 'react'
 
 const Header: FC = () => {
   return (
-    <header className={classes.header}>
-      <div className='container'>
-        <h2>&copy;
-          <a href="https://github.com/Antupod"> Antupod</a>
-        </h2>
+    <header className='header'>
+      <div className="container">
+        <a href="https://github.com/Antupod" className='logo'>&copy; Antupod</a>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

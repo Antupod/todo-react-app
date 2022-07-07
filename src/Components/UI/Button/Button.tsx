@@ -1,9 +1,8 @@
 import {FC, ReactNode} from 'react'
-import classes from './Button.module.scss'
 
 export enum Colors {
-  red = 'red',
-  green = 'green'
+  red = 'btn--red',
+  green = 'btn--green'
 }
 
 interface ButtonProps {
@@ -13,10 +12,13 @@ interface ButtonProps {
 }
 
 const Button: FC<ButtonProps> = (props) => {
-  const classNames: string[] = [classes.btn, props.color]
+  const classNames: string = ['btn', props.color].join(' ')
 
   return (
-    <button onClick={props.clickHandler} className={classNames.join(' ')}>
+    <button
+      onClick={props.clickHandler}
+      className={classNames}
+    >
       {props.children}
     </button>
   )

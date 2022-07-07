@@ -1,21 +1,34 @@
 import {FC} from 'react'
 import Button, {Colors} from '../UI/Button/Button'
-import classes from './TodoItem.module.scss'
 import ITodo from '../../Types/ITodo'
 import {observer} from 'mobx-react-lite'
+import TodoStore from '../../Store/TodoStore'
 
 interface TodoItemProps {
   todoItem: ITodo
 }
 
-const TodoItem: FC<TodoItemProps> = observer((props) => {
+const TodoItem: FC<TodoItemProps> = observer(({todoItem}) => {
   return (
-    <li className={classes.task}>
-      <div className={classes.taskGroup}>
-        <input type="checkbox" checked={props.todoItem.isComplete} onChange={() => props.todoItem.isComplete} />
-        <p>{props.todoItem.task}</p>
+    <li className='task'>
+      <div
+        className='task-group'
+      >
+        <input
+          type="checkbox"
+          checked={todoItem.isComplete}
+          onChange={() => TodoStore.completeTodo(todoItem)}
+        />
+        <p className='task-group__task'>
+          {todoItem.task}
+        </p>
       </div>
-      <Button color={Colors.red}>Удалить</Button>
+      <Button
+        clickHandler={() => TodoStore.deleteTodo(todoItem.id)}
+        color={Colors.red}
+      >
+        Удалить
+      </Button>
     </li>
   )
 })

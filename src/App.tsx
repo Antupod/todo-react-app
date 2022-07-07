@@ -2,8 +2,11 @@ import {FC} from 'react'
 import Header from './Components/Header/Header'
 import TodoHeader from './Components/TodoHeader/TodoHeader'
 import TodoList from './Components/TodoList/TodoList'
+import TaskStore from './Store/TodoStore'
+import {observer} from 'mobx-react-lite'
+import SelectStore from './Store/SelectStore'
 
-const App: FC = () => {
+const App: FC = observer(() => {
   return (
     <div>
       <Header/>
@@ -11,11 +14,18 @@ const App: FC = () => {
         <TodoHeader/>
       </section>
       <div className="container">
-        <h1 style={{color: 'black', textAlign: 'center'}}>Список задач</h1>
-        <TodoList/>
+        <h2 className="task__title">Список задач</h2>
+        {SelectStore.selectedOption === 'all' &&
+            <TodoList taskData={TaskStore.allTasks} />
+        }
+
+        {SelectStore.selectedOption === 'active'
+          ? <TodoList taskData={TaskStore.todos}/>
+          : <TodoList taskData={TaskStore.completedTodos}/>
+        }
       </div>
     </div>
   )
-}
+})
 
 export default App

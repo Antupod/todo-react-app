@@ -1,13 +1,21 @@
 import {FC} from 'react'
-import classes from './TodoList.module.scss'
 import TodoItem from '../TodoItem/TodoItem'
 import {observer} from 'mobx-react-lite'
-import TodoStore from '../../Store/TodoStore'
+import ITodo from '../../Types/ITodo'
 
-const TodoList: FC = observer(() => {
+interface TodoListProps {
+  taskData: ITodo[]
+}
+
+const TodoList: FC<TodoListProps> = observer(({taskData}) => {
   return (
-    <ul className={classes.todo} style={{marginTop: '50px'}}>
-      { TodoStore.todos.map( item => <TodoItem todoItem={item} key={item.id} /> )}
+    <ul className='todo'>
+      {taskData.map(todo =>
+        <TodoItem
+          todoItem={todo}
+          key={todo.id}
+        />
+      )}
     </ul>
   )
 })

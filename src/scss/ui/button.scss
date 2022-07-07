@@ -1,0 +1,32 @@
+@import '../vendor/mixins';
+@import '../vendor/variables';
+
+.btn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  white-space: nowrap;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    @include btnColor($btn-hover);
+  }
+
+  &--green {
+    @include btnColor($btn-success);
+  }
+
+  &--red {
+    @include btnColor($btn-danger);
+    margin-left: 5px;
+  }
+}
+
+@media(max-width:450px) {
+  .btn {
+    font-size: 7px;
+    padding: 3px 5px;
+  }
+}
